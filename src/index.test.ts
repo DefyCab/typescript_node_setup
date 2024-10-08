@@ -1,21 +1,19 @@
 import { deepEqual } from "node:assert";
 import test from "node:test";
+import { displayBaller } from ".";
+import type { FootballPlayers } from "./index";
 
-const data = [
-  { id: "12-n1", name: "Love" },
-  { id: "12-n2", name: "Erik" },
-];
+test("DisplayBaller displays name, clubs and activeYears", () => {
+  const baller = {
+    name: "Love",
+    clubs: ["West Ham", "AiK"],
+    activeYears: 15,
+  };
 
-type Person = {
-  id: string;
-  name: string;
-};
-
-function uppercaseNames(names: Person[]) {
-    return names
-}
-
-test("UpperCaseNames works with empty array", () => {
-  const result = uppercaseNames([]);
-  deepEqual(result, []);
+  const result = displayBaller(baller);
+  deepEqual(result, {
+    name: "Love",
+    clubs: ["West Ham", "AiK"],
+    activeYears: 15,
+  });
 });

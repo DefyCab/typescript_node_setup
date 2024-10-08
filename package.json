@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "test": "node --test ./src/index.ts",
+    "test": "node --test ./dist/index.js",
     "testT": "tsx --test"
   },
   "keywords": [],
